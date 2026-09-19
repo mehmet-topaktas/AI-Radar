@@ -69,19 +69,19 @@ q: Uygulamadan çıkış yapar.
 
 ### Installation
 
-1. Download the repository to your computer:
-```bash
-git clone [https://github.com/mehmet-topaktas/AI-Radar.git](https://github.com/mehmet-topaktas/AI-Radar.git)
-cd AI-Radar
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/mehmet-topaktas/AI-Radar.git](https://github.com/mehmet-topaktas/AI-Radar.git)
+   cd AI-Radar
 
-2. Create and activate a virtual environment:
-```bash
+2. Create a virtual environment and activate it:
+    ```bash
     python3 -m venv venv
-source venv/bin/activate
+    source venv/bin/activate  # for Windows: venv\Scripts\activate
 
-3. Install the necessary libraries:
-```bash
-pip install -r requirements.txt
+3. Install required dependencies:
+    ```bash
+    pip install -r requirements.txt
 
 ### Controls
 0-9: Type the ID of the target object.

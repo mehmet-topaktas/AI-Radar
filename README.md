@@ -43,3 +43,52 @@ q: Uygulamadan çıkış yapar.
 
 ###  Geliştirici
  ** Mehmet Topaktaş**
+
+ ----------------------------
+
+ # 🎯 AI Radar: Hybrid Object Tracking System
+
+[![Türkçe](https://img.shields.io/badge/Dil-Türkçe-red)](#türkçe) [![English](https://img.shields.io/badge/Language-English-blue)](#english)
+
+---
+
+## English
+
+**AI Radar** is a real-time computer vision tool that combines the object detection power of YOLOv8 with the high-performance tracking stability of OpenCV's CSRT algorithm.
+
+### How It Works?
+* **Search Mode (YOLOv8 + ByteTrack):** The system continuously scans the camera feed, detects objects using the `yolov8n.pt` model, and assigns a unique ID to each using the ByteTrack algorithm.
+* **Lock-on Mode (OpenCV CSRT):** When the user selects a specific ID and issues a lock-on command, the system moves YOLO to the background and initiates a CSRT tracker on the selected object. This reduces the processing load, increases FPS, and ensures smooth tracking.
+* **Auto-Recovery:** If the target object completely leaves the field of view for a set threshold (15 frames), the system automatically releases the lock and reverts to Search Mode.
+
+### Technologies Used
+* **Ultralytics YOLOv8:** For real-time, lightweight object detection (Nano model).
+* **OpenCV (Contrib):** For interface rendering and the CSRT tracking algorithm.
+* **PyTorch:** The core library for running YOLO; automatically detects **Apple Silicon (MPS)** and **NVIDIA (CUDA)** architectures for hardware acceleration.
+* **ByteTrack:** For multi-object tracking and ID assignment in Search Mode.
+
+### Installation
+
+1. Download the repository to your computer:
+```bash
+git clone [https://github.com/mehmet-topaktas/AI-Radar.git](https://github.com/mehmet-topaktas/AI-Radar.git)
+cd AI-Radar
+
+2. Create and activate a virtual environment:
+```bash
+    python3 -m venv venv
+source venv/bin/activate
+
+3. Install the necessary libraries:
+```bash
+pip install -r requirements.txt
+
+### Controls
+0-9: Type the ID of the target object.
+t: Track - Lock onto the entered ID.
+c: Cancel - Cancel tracking and return to Search Mode.
+Backspace: Delete the typed ID.
+q: Quit the application.
+
+### Developer
+** Mehmet Topaktaş**
